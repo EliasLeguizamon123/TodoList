@@ -1,8 +1,31 @@
 import { Box, Heading, SimpleGrid, Text, useColorMode } from '@chakra-ui/react';
-import ChangeColorModeButton from './ChangeColorModeButton.component';
+import TodoItem from './TodoItem.component';
 
 function TodosBody() {
     const { colorMode } = useColorMode();
+
+    const todosDummies = [
+        {
+            id: 1,
+            description: 'Make todo',
+            isChecked: false,
+        },
+        {
+            id: 2,
+            description: 'Learn C++',
+            isChecked: false,
+        },
+        {
+            id: 3,
+            description: 'Read Godot Docs',
+            isChecked: false,
+        },
+        {
+            id: 4,
+            description: 'Make get started',
+            isChecked: false,
+        },
+    ];
 
     return (
         <Box
@@ -15,9 +38,8 @@ function TodosBody() {
         >
             <SimpleGrid columns={2} p={4} spacing={6}>
                 <Heading>Todo List</Heading>
-                <ChangeColorModeButton />
             </SimpleGrid>
-            <Text>List</Text>
+            <TodoItem todos={todosDummies} />
         </Box>
     );
 }

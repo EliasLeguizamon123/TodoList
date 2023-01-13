@@ -1,12 +1,12 @@
 import { Button, useColorMode } from '@chakra-ui/react';
-import { VscColorMode } from 'react-icons/vsc';
+import { RiEyeLine, RiEyeCloseLine } from 'react-icons/ri';
 
 function ChangeColorModeButton() {
-    const { toggleColorMode } = useColorMode();
+    const { colorMode, toggleColorMode } = useColorMode();
 
     return (
         <Button size="md" variant="ghost" w="100px" onClick={toggleColorMode}>
-            <VscColorMode />
+            {colorMode === 'light' ? <RiEyeLine /> : <RiEyeCloseLine />}
         </Button>
     );
 }
