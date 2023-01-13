@@ -8,7 +8,7 @@ function TodosBody() {
         {
             id: 1,
             description: 'Make todo',
-            isChecked: false,
+            isChecked: true,
         },
         {
             id: 2,

@@ -23,10 +23,12 @@ function TodoItem(props: props) {
                 <Stack key={todo.id} p={2} w="full">
                     <SimpleGrid columns={3} gap={4}>
                         <Box w="full">
-                            <Checkbox />
+                            <Checkbox isChecked={todo.isChecked} />
                         </Box>
                         <Box w="full">
-                            <Text>{todo.description}</Text>
+                            <Text as={todo.isChecked ? 'del' : 'i'}>
+                                {todo.description}
+                            </Text>
                         </Box>
                         <Box w="full">
                             <Button
